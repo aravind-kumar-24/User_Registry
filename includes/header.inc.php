@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Registry</title>
+        <link rel="icon" type="image/x-icon" href="../assets/images/user_registry_favicon.png"/>
     </head>
     <body>
         <nav class="navbar">
@@ -21,11 +23,15 @@
                 </div>
             </div>
             <div class="navbar-options-02">
-                <div>
-                    Login
+                <div class="login_button">
+                    <a href="forms/login/login.php">
+                        Login
+                    </a>
                 </div>
                 <div class="signup_button">
-                    Signup
+                    <a href="forms/registration/registration.php">
+                        Signup
+                    </a>
                 </div>
             </div>
         </nav>
