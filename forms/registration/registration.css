@@ -1,0 +1,126 @@
+.registration-container{
+    display: flex;
+    flex-direction: row;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 50px 110px;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    color: #2D3134;
+}
+
+.registration-container-right{
+    border: 1px solid #3295a8;
+    padding:40px 50px;
+    border-radius: 20px;
+    width: 500px;
+}
+
+.registration-container-right form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.registration-container-right label{
+    font-size: 15px;
+    color: #5B5F62;
+    font-weight: 500;
+}
+
+.line_01, .line_02, .line_03, .line_04, .line_08{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.gender_input .genders{
+    display: flex;
+    gap: 5px;
+}
+
+.gender_input .genders label{
+    color: #808080;
+}
+
+.first_name_input, .last_name_input, .gender_input, .dob_input, .email_input, .number_input, .country_input, .state_input, .address_input, .profile_input, .password_input, .confirm_password_input{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.first_name_input input, .last_name_input input, .email_input input, .number_input input, .password_input input, .confirm_password_input input{
+    border: 1px solid #3295a8;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 0 8px 12px;
+    color: #808080;
+}
+
+.country_input select, .state_input select, .dob_input input{
+    border: 1px solid #3295a8;
+    padding: 8px 0 8px 12px;
+    outline: none;
+    border-radius: 5px;
+    color: #808080;
+}
+
+.dob_input input{
+    padding-right: 12px;
+}
+
+.first_name_input, .last_name_input, .email_input, .number_input, .country_input, .state_input, .password_input, .confirm_password_input, .gender_input, .dob_input{
+    width: 100%;
+}
+
+.address_input{
+    padding-right: 15px;
+}
+
+.address_input textarea{
+    padding: 8px 0 8px 12px;
+    min-height: 35px;
+    min-width: 100%;
+    max-height: 35px;
+    max-width: 100%;
+    border: 1px solid #3295a8;
+    outline: none;
+    border-radius: 5px;
+    color: #808080;
+}
+
+.line_09{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.line_09 input{
+    background-color: #3295a8;
+    padding: 12px 0 12px 0;
+    border: none;
+    font-size: 15px;
+    color: #FAF8ED;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.line_09 div{
+    text-align: center;
+    font-size: 13px;
+}
+
+.line_09 span{
+    color: #3295a8;
+    cursor: pointer;
+}
+
+.error_message{
+    color: #E74C3C;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+
+
+

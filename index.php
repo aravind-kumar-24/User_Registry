@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="./assets/css/header.css"/>
         <link rel="stylesheet" href="./index.css"/>
     </head>
-    <body style="background-color: #FAF8ED;">
+    <body style="background-color: #F0F4F5;">
         <?php require_once "./includes/header.inc.php" ?>
         <div class="container">
             <div class="container-left">
