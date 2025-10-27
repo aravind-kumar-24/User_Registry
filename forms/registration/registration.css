@@ -49,11 +49,20 @@
     gap: 8px;
 }
 
-.first_name_input input, .last_name_input input, .email_input input, .number_input input, .password_input input, .confirm_password_input input{
+.first_name_input input, .last_name_input input, .email_input input, .number_input input{
     border: 1px solid #3295a8;
     outline: none;
     border-radius: 5px;
     padding: 8px 0 8px 12px;
+    color: #808080;
+}
+
+.password_input input, .confirm_password_input input{
+    width: 100%;
+    border: 1px solid #3295a8;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 12px 8px 12px;
     color: #808080;
 }
 
@@ -120,6 +129,20 @@
     font-size: 12px;
     margin-left: 10px;
 }
+
+.password_cum_icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.password_cum_icon img{
+    cursor: pointer;
+    margin-left: -35px;
+    margin-right: 10px;
+}
+
 
 
 

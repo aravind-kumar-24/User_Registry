@@ -45,3 +45,15 @@ function sanitizePasswordFields(password){
         }
     })
 }
+
+function passwordEyeIcon(password, icon){
+    icon.addEventListener('click', function(){
+        if(password.type == 'password'){
+            password.type = "text";
+            icon.src = "../../assets/images/eye_opened.png";
+        }else{
+            password.type = "password";
+            icon.src = "../../assets/images/eye_closed.png";
+        }
+    })
+}
