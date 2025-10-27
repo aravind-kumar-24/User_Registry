@@ -156,7 +156,10 @@
                     <div class="line_08">
                         <div class="password_input">
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password" value="<?php if(isset($password) && !empty($password)) echo $password ?>"/>
+                            <div class="password_cum_icon">
+                                <input type="password" name="password" id="password" value="<?php if(isset($password) && !empty($password)) echo $password ?>"/>
+                                <img id="eye_icon" src="../../assets/images/eye_closed.png" alt="">
+                            </div>
                             <?php if(isset($password_error) && !empty($password_error)): ?>
                                 <span class="error_message">
                                     <?php echo $password_error ?>
@@ -166,7 +169,10 @@
 
                         <div class="confirm_password_input">
                             <label for="confirm_password">Confirm Password</label>
-                            <input type="password" name="confirm_password" id="confirm_password" value="<?php if(isset($confirm_password) && !empty($confirm_password)) echo $confirm_password ?>"/>
+                            <div class="password_cum_icon">
+                                <input type="password" name="confirm_password" id="confirm_password" value="<?php if(isset($confirm_password) && !empty($confirm_password)) echo $confirm_password ?>"/>
+                                <img id="confirm_eye_icon" src="../../assets/images/eye_closed.png" alt="">
+                            </div>
                             <?php if(isset($confirm_password_error) && !empty($confirm_password_error)): ?>
                                 <span class="error_message">
                                     <?php echo $confirm_password_error ?>
@@ -196,6 +202,8 @@
     const address = document.getElementById('address');
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirm_password');
+    const eye_icon = document.getElementById('eye_icon');
+    const confirm_eye_icon = document.getElementById('confirm_eye_icon');
 
     sanitizeTextFields(firstName);
     sanitizeTextFields(lastName);
@@ -204,4 +212,6 @@
     sanitizeTextFields(address);
     sanitizePasswordFields(password);
     sanitizePasswordFields(confirmPassword);
+    passwordEyeIcon(password, eye_icon);
+    passwordEyeIcon(confirmPassword, confirm_eye_icon);
 </script>
