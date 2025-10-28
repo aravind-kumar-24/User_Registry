@@ -1,5 +1,6 @@
 <?php
     require_once "../../includes/form_input_handling.php";
+    require_once "../../config/database_connection.inc.php";
 
     $request_method = $_SERVER['REQUEST_METHOD'];
 
@@ -118,6 +119,22 @@
             if(!in_array($file_type, $allowed_extensions)){
                 $profile_image_error = "Invalid File type.";
             }
+        }
+
+        try{
+            $data_insertion_query = "";
+
+            $statement = $connection->prepare($data_insertion_query);
+
+            $statement->execute();
+
+            $connection = null;
+
+            $statement = null;
+
+            echo "Registration completed successfully";
+        }catch(PDOException $error){
+            echo "Registration failed: " . $error->getMessage();
         }
 
     }

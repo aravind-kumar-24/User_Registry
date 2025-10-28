@@ -10,7 +10,16 @@
         <link rel="stylesheet" href="../../assets/css/header.css"/>
     </head>
     <body style="background-color: #F0F4F5;">
-        <?php require_once "../../includes/header.inc.php" ?>
+        <?php 
+            require_once "../../includes/header.inc.php"; 
+            require_once "../../includes/assets.inc.php";
+            require_once "../../config/database_connection.inc.php";
+            
+            $countries = fetch_countries($connection);
+
+            $states = fetch_states($connection);
+
+        ?>
         <div class="registration-container">
             <div class="registration-container-left">
                 <img height="500px" class="registration_page_image" src="../../assets/images/registration_page_image_01.png"/>
@@ -104,6 +113,13 @@
                                 <option value="" disabled selected> 
                                     Select a Country
                                 </option>
+                                <?php if(!empty($countries)): ?>
+                                    <?php foreach($countries as $individual_country): ?>
+                                        <option value="<?php echo htmlspecialchars($individual_country['id']) ?>" <?php if(isset($country) && !empty($country) && $country == $individual_country['id']) echo "selected"; ?>>
+                                            <?php echo htmlspecialchars($individual_country['country_name']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </select>
                             <?php if(isset($country_error) && !empty($country_error)): ?>
                                 <span class="error_message">
@@ -118,6 +134,13 @@
                                 <option value="" disabled selected>
                                     Select a State
                                 </option>
+                                <?php if(!empty($states)): ?>
+                                    <?php foreach($states as $individual_state): ?>
+                                        <option value="<?php echo htmlspecialchars($individual_state['id']); ?>" <?php if(isset($state) && !empty($state) && $state == $individual_state['id']) echo "selected"; ?>>
+                                            <?php echo htmlspecialchars($individual_state['state_name']); ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </select>
                             <?php if(isset($state_error) && !empty($state_error)): ?>
                                 <span class="error_message">
