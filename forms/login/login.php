@@ -9,7 +9,28 @@
     <link rel="stylesheet" href="../../assets/css/header.css"/>
 </head>
 <body>
-    <?php require_once "../../includes/header.inc.php" ?>
+    <?php 
+        require_once "../../includes/header.inc.php";
+        require_once "../../includes/assets.inc.php";
+
+        $flash_message = get_flash();
+
+    ?>
+    <?php if($flash_message): ?>
+        <div class="toast_message <?php $flash_message['type'] ?>">
+            <?php htmlspecialchars($flash_message['message']) ?>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: '<?= $flash_message['type'] ?>',
+                title: '<?= ucfirst($flash_message['type']) ?>',
+                text: '<?= addslashes($flash_message['message']) ?>',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        </script>
+    <?php endif; ?>
     <div>
         Login page
     </div>
