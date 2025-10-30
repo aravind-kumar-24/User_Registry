@@ -14,6 +14,8 @@
             require_once "../../includes/header.inc.php"; 
             require_once "../../includes/assets.inc.php";
             require_once "../../config/database_connection.inc.php";
+
+            $project_root = '/Projects/User_Registry';
             
             $countries = fetch_countries($connection);
 
@@ -207,7 +209,7 @@
                     <div class="line_09">
                         <input type="submit" value="Register"/>
                         <div>
-                            Already registered? <span>Login</span>
+                            Already registered? <span><a href="<?php echo $project_root ?>/forms/login/login.php">Login</a></span>
                         </div>
                     </div>
                 </form>

@@ -1,0 +1,98 @@
+.login-container{
+    display: flex;
+    flex-direction: row;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 50px 110px;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    color: #2D3134;
+}
+
+.login-container-left{
+    border: 1px solid #3295a8;
+    padding:80px 50px;
+    border-radius: 20px;
+    width: 350px;
+}
+
+.login-container-left form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.login-container-left label{
+    font-size: 15px;
+    color: #5B5F62;
+    font-weight: 500;
+}
+
+.email_input, .password_input{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.email_input input{
+    border: 1px solid #3295a8;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 0 8px 12px;
+    color: #808080;
+}
+
+.password_input input{
+    width: 100%;
+    border: 1px solid #3295a8;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 12px 8px 12px;
+    color: #808080;
+}
+
+.line_03{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.line_03 input{
+    background-color: #3295a8;
+    padding: 12px 0 12px 0;
+    border: none;
+    font-size: 15px;
+    color: #FAF8ED;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.line_03 div{
+    text-align: center;
+    font-size: 13px;
+}
+
+.line_03 span a{
+    color: #3295a8;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.error_message{
+    color: #E74C3C;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.password_cum_icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.password_cum_icon img{
+    cursor: pointer;
+    margin-left: -35px;
+    margin-right: 10px;
+}
