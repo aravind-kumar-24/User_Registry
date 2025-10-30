@@ -119,10 +119,13 @@
     font-size: 13px;
 }
 
-.line_09 span{
+.line_09 span a{
     color: #3295a8;
     cursor: pointer;
+    text-decoration: none;
 }
+
+
 
 .error_message{
     color: #E74C3C;

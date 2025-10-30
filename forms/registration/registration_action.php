@@ -152,7 +152,9 @@
         }else{
             $profile_image = $_FILES['profile_image']['name'];
 
-            $directory = "../../uploads/profile_images";
+            $directory = "uploads/profile_images";
+
+            $directory_structure = "../../uploads/profile_images";
 
             $file_type = strtolower(pathinfo($profile_image, PATHINFO_EXTENSION));
 
@@ -184,7 +186,7 @@
 
                 $unique_file_name = $user_id . '_profile.'. $file_type;
 
-                $file_structure = $directory.'/'.$unique_file_name;
+                $file_structure = $directory_structure.'/'.$unique_file_name;
 
                 $data_insertion_query = "
                     INSERT INTO users (user_id, first_name, last_name, email_id, mobile_number, password, user_type, gender, date_of_birth, country_id, state_id, address, profile_path, profile_image)

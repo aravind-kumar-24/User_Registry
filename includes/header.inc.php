@@ -1,6 +1,8 @@
 
 <?php
     $file_name = $_SERVER['PHP_SELF'];
+    
+    $project_root = '/Projects/User_Registry';
 
     $registration_page = false;
     $login_page = false;
@@ -40,7 +42,7 @@
             <div class="navbar-options-02">
                 <?php if($registration_page): ?>
                     <div class="login_button_registration">
-                        <a href="../forms/login/login.php">
+                        <a href="<?php echo $project_root ?>/forms/login/login.php">
                             Login
                         </a>
                     </div>
@@ -48,12 +50,12 @@
 
                 <?php if(!$registration_page && !$login_page): ?>
                     <div class="login_button">
-                        <a href="forms/login/login.php">
+                        <a href="<?php echo $project_root ?>/forms/login/login.php">
                             Login
                         </a>
                     </div>
                     <div class="signup_button">
-                        <a href="forms/registration/registration.php">
+                        <a href="<?php echo $project_root ?>/forms/registration/registration.php">
                             Signup
                         </a>
                     </div>
@@ -61,7 +63,7 @@
                 
                 <?php if($login_page): ?>
                     <div class="signup_button">
-                        <a href="forms/registration/registration.php">
+                        <a href="<?php echo $project_root ?>/forms/registration/registration.php">
                             Signup
                         </a>
                     </div>
