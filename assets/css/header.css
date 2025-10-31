@@ -62,3 +62,14 @@
     text-decoration: none;
     color: #3295a8;
 }
+
+.logout_button{
+    border: 2px solid #3295a8;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+.logout_button a{
+    text-decoration: none;
+    color: #3295a8;
+}

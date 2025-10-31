@@ -6,11 +6,14 @@
 
     $registration_page = false;
     $login_page = false;
+    $index_page = false;
 
     if(preg_match("/registration.php/i", $file_name)){
         $registration_page = true;
     }else if(preg_match("/login.php/i", $file_name)){
         $login_page = true;
+    }else if(preg_match("/users_profile.php/i", $file_name) || preg_match("/admin_index.php/i", $file_name)){
+        $index_page = true;
     }
 
 ?>
@@ -48,7 +51,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if(!$registration_page && !$login_page): ?>
+                <?php if(!$registration_page && !$login_page && !$index_page): ?>
                     <div class="login_button">
                         <a href="<?php echo $project_root ?>/forms/login/login.php">
                             Login
@@ -65,6 +68,14 @@
                     <div class="signup_button">
                         <a href="<?php echo $project_root ?>/forms/registration/registration.php">
                             Signup
+                        </a>
+                    </div>
+                <?php endif; ?>
+
+                <?php if($index_page): ?>
+                    <div class="logout_button">
+                        <a href="#">
+                            Logout
                         </a>
                     </div>
                 <?php endif; ?>
