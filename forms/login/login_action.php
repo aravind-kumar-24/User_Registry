@@ -61,6 +61,7 @@
                         $password_error = "Password doesn't match.";
                     }else{
                         $_SESSION['USER_ID'] = $user_id;
+                        $_SESSION['USER_TYPE'] = $user_type;
                         set_flash('success', 'Logged in successfully.');
                         if($user_type == 1){
                             header("Location: ../../admin/admin_index.php");

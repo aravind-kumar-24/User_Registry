@@ -67,5 +67,47 @@
         }
         return null;
     }
+
+    function get_country_name($connection, $country_id){
+        try{
+            $get_country_name_query = "
+                SELECT * FROM countries
+                WHERE id = :country_id;
+            ";
+
+            $statement = $connection->prepare($get_country_name_query);
+
+            $statement->bindParam(":country_id", $country_id);
+
+            $statement->execute();
+
+            $result = $statement->fetch();
+
+            return $result['country_name'];
+        }catch(PDOException $error){
+            error_log("[" . date("Y-m-d H:i:s") . "] Failed to fetch country against the user: " . $error->getMessage() . "\n", 3, __DIR__ . "/error.log");
+        }
+    }
+
+    function get_state_name($connection, $state_id){
+         try{
+            $get_state_name_query = "
+                SELECT * FROM states
+                WHERE id = :state_id;
+            ";
+
+            $statement = $connection->prepare($get_state_name_query);
+
+            $statement->bindParam(":state_id", $state_id);
+
+            $statement->execute();
+
+            $result = $statement->fetch();
+
+            return $result['state_name'];
+        }catch(PDOException $error){
+            error_log("[" . date("Y-m-d H:i:s") . "] Failed to fetch state against the user: " . $error->getMessage() . "\n", 3, __DIR__ . "/error.log");
+        }
+    }
     
 ?>
