@@ -1,19 +1,26 @@
 
 <?php
+
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
     $file_name = $_SERVER['PHP_SELF'];
-    
+
+    $user_id = isset($_SESSION['USER_ID']) ? $_SESSION['USER_ID'] : null;
+
     $project_root = '/Projects/User_Registry';
 
     $registration_page = false;
     $login_page = false;
-    $index_page = false;
+    $auth_page = false;
 
     if(preg_match("/registration.php/i", $file_name)){
         $registration_page = true;
     }else if(preg_match("/login.php/i", $file_name)){
         $login_page = true;
-    }else if(preg_match("/users_profile.php/i", $file_name) || preg_match("/admin_index.php/i", $file_name)){
-        $index_page = true;
+    }else if(!preg_match("/registration.php/i", $file_name) || preg_match("/login.php/i", $file_name)){
+        $auth_page = true;
     }
 
 ?>
@@ -33,13 +40,13 @@
             </div>
             <div class="navbar-options-01">
                 <div>
-                    Home
+                    <a href="<?php echo $project_root ?>">Home</a>
                 </div>
                 <div>
-                    About us
+                    <a href="#">About us</a>
                 </div>
                 <div>
-                    Contacts
+                    <a href="#">Contacts</a>
                 </div>
             </div>
             <div class="navbar-options-02">
@@ -51,7 +58,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if(!$registration_page && !$login_page && !$index_page): ?>
+                <?php if(!$registration_page && !$login_page && !isset($user_id)): ?>
                     <div class="login_button">
                         <a href="<?php echo $project_root ?>/forms/login/login.php">
                             Login
@@ -72,10 +79,15 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if($index_page): ?>
+                <?php if(!$registration_page && !$login_page && $user_id): ?>
                     <div class="logout_button">
-                        <a href="#">
+                        <a href="<?php echo $project_root ?>/forms/logout/logout_action.php">
                             Logout
+                        </a>
+                    </div>
+                    <div class="profile_logo">
+                        <a href="<?php echo $project_root?>/users/users_profile.php">
+                            <img src="<?php echo $project_root?>/assets/images/profile_logo.png" alt="">
                         </a>
                     </div>
                 <?php endif; ?>

@@ -25,6 +25,11 @@
     color: #5B5F62;
 }
 
+.navbar-options-01 a{
+    text-decoration: none;
+    color: #5B5F62;
+}
+
 .navbar-options-02{
     display:flex;
     flex-direction: row;
@@ -72,4 +77,19 @@
 .logout_button a{
     text-decoration: none;
     color: #3295a8;
+}
+
+.profile_logo{
+    width: 50px;
+    height: 50px;
+}
+
+.profile_logo a{
+    text-decoration: none;
+}
+
+.profile_logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
