@@ -14,8 +14,9 @@
         <?php 
             require_once "../../includes/header.inc.php";
             require_once "../../includes/assets.inc.php";
+            require_once __DIR__.'/../../bootstrap.php';
 
-            $project_root = '/Projects/User_Registry';
+            $project_root = $_ENV['PROJECT_DIRECTORY'];
 
             $flash_message = get_flash();
 

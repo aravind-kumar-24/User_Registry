@@ -14,9 +14,10 @@
             require_once "../../includes/header.inc.php"; 
             require_once "../../includes/assets.inc.php";
             require_once "../../config/database_connection.inc.php";
+            require_once __DIR__.'/../../bootstrap.php';
 
-            $project_root = '/Projects/User_Registry';
-            
+            $project_root = $_ENV['PROJECT_DIRECTORY'];
+
             $countries = fetch_countries($connection);
 
             $states = fetch_states($connection);

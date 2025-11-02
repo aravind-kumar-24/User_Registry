@@ -9,8 +9,9 @@
     require_once "../includes/header.inc.php";
     require_once "../includes/assets.inc.php";
     require_once "../includes/user_details.inc.php";
+    require_once __DIR__.'/../bootstrap.php';
 
-    $project_root = '/Projects/User_Registry';
+    $project_root = $_ENV['PROJECT_DIRECTORY'];
 
     $user_type = $_SESSION['USER_TYPE'];
 
