@@ -10,7 +10,9 @@
     $user_id = isset($_SESSION['USER_ID']) ? $_SESSION['USER_ID'] : null;
     $user_type = isset($_SESSION['USER_TYPE']) ? $_SESSION['USER_TYPE'] : null;
 
-    $project_root = '/Projects/User_Registry';
+    require_once __DIR__.'/../bootstrap.php';
+
+    $project_root = $_ENV['PROJECT_DIRECTORY'];
 
     $registration_page = false;
     $login_page = false;

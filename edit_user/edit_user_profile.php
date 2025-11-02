@@ -6,13 +6,14 @@
         exit();
     }
     
-    $project_root = '/Projects/User_Registry';
-
     require_once "edit_user_profile_action.php";
     require_once "../includes/header.inc.php";
     require_once "../includes/user_details.inc.php";
     require_once "../config/database_connection.inc.php";
     require_once "../includes/assets.inc.php";
+    require_once __DIR__.'/../bootstrap.php';
+    
+    $project_root = $_ENV['PROJECT_DIRECTORY'];
 
     $user_details_against_user_id = $user_details;
 
