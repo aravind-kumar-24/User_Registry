@@ -4,7 +4,7 @@
         session_start();
     }
 
-    if(!isset($_SESSION['USER_ID']) && empty($_SESSION['USER_ID'])){
+    if(!isset($_SESSION['USER_ID']) || empty($_SESSION['USER_ID'])){
         header("Location: ../forms/login/login.php");
         exit();
     }
@@ -19,7 +19,7 @@
 
         $get_user_details = "
             SELECT * FROM users
-            WHERE user_id = :user_id;
+            WHERE user_id = :user_id AND deleted_at IS NULL;
         ";
 
         $statement = $connection->prepare($get_user_details);

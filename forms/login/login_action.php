@@ -47,13 +47,20 @@
                 
                 $statement->execute();
                 
-                $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $results = $statement->fetch();
 
                 
                 if(!empty($results)){
-                    $user_password = $results[0]['password'];
-                    $user_type = $results[0]['user_type'];
-                    $user_id = $results[0]['user_id'];
+                    
+                    if(isset($results['deleted_at']) && !empty($results['deleted_at'])){
+                        set_flash('error', 'Your accound has been deleted! Please contact the Admin.');
+                        header("Location: login.php");
+                        exit();
+                    }
+
+                    $user_password = $results['password'];
+                    $user_type = $results['user_type'];
+                    $user_id = $results['user_id'];
 
                     $password_check = password_verify($password, $user_password);
 

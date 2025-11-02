@@ -8,6 +8,7 @@
     $file_name = $_SERVER['PHP_SELF'];
 
     $user_id = isset($_SESSION['USER_ID']) ? $_SESSION['USER_ID'] : null;
+    $user_type = isset($_SESSION['USER_TYPE']) ? $_SESSION['USER_TYPE'] : null;
 
     $project_root = '/Projects/User_Registry';
 

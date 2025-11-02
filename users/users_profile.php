@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['USER_ID']) && empty($_SESSION['USER_ID'])){
+    if(!isset($_SESSION['USER_ID']) || empty($_SESSION['USER_ID']) || !isset($_SESSION['USER_TYPE']) || empty($_SESSION['USER_TYPE'])){
         header("Location: ../forms/login/login.php");
         exit();
     }
@@ -11,6 +11,8 @@
     require_once "../includes/user_details.inc.php";
 
     $project_root = '/Projects/User_Registry';
+
+    $user_type = $_SESSION['USER_TYPE'];
 
     $flash_message = get_flash();
 ?>
@@ -105,7 +107,12 @@
                 </div>
             </div>
             <div class="edit_profile">
-                <a href="<?php echo $project_root ?>/edit_user/edit_user_profile.php">
+                <?php if(isset($user_type) && $user_type == 1): ?>
+                    <a class="back_to_profile" href="<?php echo $project_root ?>/admin/admin_index.php">
+                        Back
+                    </a>
+                <?php endif; ?>
+                <a class="move_to_edit" href="<?php echo $project_root ?>/edit_user/edit_user_profile.php">
                     Edit
                 </a>
             </div>
