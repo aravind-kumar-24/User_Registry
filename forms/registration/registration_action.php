@@ -184,7 +184,7 @@
 
                 $user_type = 2;
 
-                $unique_file_name = $user_id . '_profile.'. $file_type;
+                $unique_file_name = $user_id . '_profile.' . time() . '.' . $file_type;
 
                 $file_structure = $directory_structure.'/'.$unique_file_name;
 
