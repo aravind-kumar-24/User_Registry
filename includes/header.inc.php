@@ -93,6 +93,11 @@
                             <img src="<?php echo $project_root?>/assets/images/profile_logo.png" alt="">
                         </a>
                     </div>
+                    <div class="change_password_logo">
+                        <a href="<?php echo $project_root?>/forms/change_password/change_password.php">
+                            <img src="<?php echo $project_root?>/assets/images/change_password.png" alt="">
+                        </a>
+                    </div>
                 <?php endif; ?>
             </div>
         </nav>
