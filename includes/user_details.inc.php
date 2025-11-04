@@ -9,8 +9,8 @@
         exit();
     }
 
-    require_once "../config/database_connection.inc.php";
-    require_once "../includes/assets.inc.php";
+    require_once __DIR__.'/../config/database_connection.inc.php';
+    require_once __DIR__."/../includes/assets.inc.php";
 
     try{
         $user_id =  $_SESSION['USER_ID'];
